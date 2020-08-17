@@ -4,7 +4,8 @@ class Solution {
     public int solution(int[] A) {
         int allNumberSize = A.length + 1;
         int allNumberSum = sumIntArray(createIntArray(allNumberSize));
-        //int allNumberSum = (allNumberSize * (allNumberSize + 1)) / 2;
+        // Commented - gave incorrect "output" on some Codility "performance" test cases. cannot accurately reproduce as cannot see Codility test inputs. still tryna reproduce locally and it worked fine
+        // int allNumberSum = (allNumberSize * (allNumberSize + 1)) / 2;
         int missingNumberSum = sumIntArray(A);
 
         return allNumberSum - missingNumberSum;
