@@ -2,29 +2,29 @@ import java.util.Arrays;
 
 class Solution {
     public int solution(int[] A) {
-        if (A.length == 0) {
-            return 1;
+        int allNumberSize = A.length + 1;
+        int allNumberSum = sumIntArray(createIntArray(allNumberSize));
+        //int allNumberSum = (allNumberSize * (allNumberSize + 1)) / 2;
+        int missingNumberSum = sumIntArray(A);
+
+        return allNumberSum - missingNumberSum;
+    }
+
+    private int sumIntArray(int[] A) {
+        int sum = 0;
+        for (int i = 0; i < A.length; i++) {
+            sum += A[i];
+        }
+
+        return sum;
+    }
+    
+    private int[] createIntArray(int size) {
+        int[] A = new int[size];
+        for (int i = 0; i < size; i++) {
+            A[i] = i + 1;
         }
         
-        if (A.length == 1 && A[0] == 2) {
-            return 1;
-        }
-        
-        if (A.length == 1 && A[0] == 1) {
-            return 2;
-        }
-        
-        Arrays.sort(A);
-        for (int i = 0; i < A.length - 1; i++) {
-            if (A[i+1] != A[i] + 1) { 
-                    return A[i] + 1; 
-            }
-        }
-        
-        if (A[0] != 1) {
-            return 1;
-        }
-        
-        return A[A.length - 1] + 1;
+        return A;
     }
 }
