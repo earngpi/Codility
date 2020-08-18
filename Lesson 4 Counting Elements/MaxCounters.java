@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int[] solution(int N, int[] A) {
         int [] counters = new int[N];
