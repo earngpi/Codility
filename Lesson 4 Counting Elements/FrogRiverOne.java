@@ -5,10 +5,6 @@ class Solution {
         HashSet<Integer> fallenLeafSet = new HashSet<>();
         
         for (int i = 0; i < A.length; i++) {
-            if (fallenLeafSet.contains(A[i])) {
-                continue;
-            }
-            
             fallenLeafSet.add(A[i]);
             if (fallenLeafSet.size() == X) {
                 return i;
